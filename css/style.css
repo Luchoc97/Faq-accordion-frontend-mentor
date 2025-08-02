@@ -1,0 +1,92 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FAEEFF;
+    flex-direction: column;
+    overflow: hidden;
+}
+.contenido{
+    background-color: #fff;
+    width: 40%;
+    padding: 40px 20px;
+    border-radius: 15px;
+    z-index: 1;
+}
+.fondo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("../assets/images/background-pattern-desktop.svg");
+    width: 100%;
+    height: 35vh;
+    background-size: cover;
+}
+.contenido .titulofaqs{
+    display: flex;
+}
+.contenido .textoAcordion{
+    display: none;
+    padding: 0 10px;
+    color: #868686;
+}
+/*agrega clase al texto para mostrar por medio de js*/
+.contenido .textoAcordion.mostrarTextoAcordion{
+    display: block;
+}
+.contenido .btnAcordion{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    text-align: start;
+}
+.contenido .btnAcordion:hover{
+    color: #AD28EB;
+}
+/*se agrega icono de + por medio de css*/
+.contenido .btnAcordion::after{
+    content: url("../assets/images/icon-plus.svg");
+}
+.contenido .btnAcordion.btnAcordionIcono::after{
+    content: url("../assets/images/icon-minus.svg");
+}
+.contenido .btnAcordion:not(:last-child){
+    border-bottom: 1px solid #cecece;
+}
+@media (max-width: 1024px){
+    .contenido{
+        width: 50%;
+    }
+}
+@media (max-width: 768px){
+    .contenido{
+        width: 60%;
+    }
+}
+@media (max-width: 480px){
+    .contenido{
+        width: 90%;
+    }
+    .fondo{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: url("../assets/images/background-pattern-mobile.svg");
+        width: 100%;
+        height: 30vh;
+    }
+}
